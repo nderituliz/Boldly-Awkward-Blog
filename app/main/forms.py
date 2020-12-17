@@ -19,3 +19,8 @@ class ReviewForm(FlaskForm):
     review = TextAreaField('Blog Review')
 
     submit = SubmitField('Submit')
+
+
+class EditBlog(FlaskForm):
+
+    submit = SubmitField('Edit Blog')
