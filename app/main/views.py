@@ -26,3 +26,17 @@ def check_user():
         abort(403)
 
     return render_template('admin/dashboard.html')
+
+
+@main.route('/blog/<int:id>')
+
+def single_blog(id):
+
+    single_blog = Blog.query.get(id)
+
+    reviews = Review.get_reviews(id)
+
+    if single_blog is None:
+        abort (404)
+
+    return render_template('blog.html', blog=single_blog, reviews=reviews)
