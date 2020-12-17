@@ -29,3 +29,8 @@ class EditBlog(FlaskForm):
 class DeleteBlog(FlaskForm):
 
     submit = SubmitField('Delete Blog')
+
+
+class DeleteComment(FlaskForm):
+
+    submit = SubmitField('Delete Comment')
