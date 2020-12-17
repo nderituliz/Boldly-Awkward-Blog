@@ -15,3 +15,14 @@ def index():
     blogs = Blog.get_blog(id)
 
     return render_template('index.html', blogs=blogs)
+
+
+@admin.route('/dashboard')
+@login_required
+
+def check_user():
+
+    if current_user.id != 1:
+        abort(403)
+
+    return render_template('admin/dashboard.html')
