@@ -75,3 +75,8 @@ def new_review(id):
         return redirect(url_for('.single_blog', id=blog.id))
 
     return render_template('new_review.html', review_form=form, blog=blog)
+
+@main.route('/quote')
+def quote():
+    
+    return render_template('quote.html')
