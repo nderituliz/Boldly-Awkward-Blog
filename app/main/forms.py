@@ -24,3 +24,8 @@ class ReviewForm(FlaskForm):
 class EditBlog(FlaskForm):
 
     submit = SubmitField('Edit Blog')
+
+
+class DeleteBlog(FlaskForm):
+
+    submit = SubmitField('Delete Blog')
