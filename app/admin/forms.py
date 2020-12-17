@@ -12,3 +12,11 @@ class BlogForm(FlaskForm):
     blog = TextAreaField('Blog')
 
     submit = SubmitField('Submit')
+
+class ReviewForm(FlaskForm):
+
+    review = TextAreaField('Blog Review')
+
+    submit = SubmitField('Submit')
+
+
