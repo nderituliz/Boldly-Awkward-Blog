@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    {% block styles%}
+        {{ super() }}
+            <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    {% endblock %}
+
+
+    {% block content %}
+    <div class="container blog">
+        <div class="jumbotron">
+        
+
+            {% if current_user.is_authenticated%}
+                  <h1>Hello {{current_user.username}}😊 </h1>
+                <h1>Welcome to our app!</h1>
+            {% else %}
+                <h1>Hi there, You're welcome to share your quotes</h1>
+                
+                
+            {%endif%}
+
+        
+
+
+        <hr>
+
+
+        <div class="container">
+
+            <div class="row">
+
+                <ul >
+                    <div class="card-columns mt-5">
+                        <div class="card bg-secondary">
+                          <div class="card-body text-center">
+                            <p class="card-text">
+                            <img src="https://i.pinimg.com/236x/f3/ec/f0/f3ecf00027960b8f79c160af489df3e5.jpg" width="300" height="310"></p>
+                            <p>Design is not just what it looks like and feels like. Design is how it works..</p>
+                          </div>
+                        </div>
+                        <div class="container">
+
+                            <h4 class="text-left">
+                                <a class="btn btn-primary" href="/admin/blog/new">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create a new blog</a>
+                            </h4>
+                
+                
+                        </div>
+                        
+                    {{ macro.displayBlogList (blogs) }}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock %}
+
+</body>
+
+</html>
