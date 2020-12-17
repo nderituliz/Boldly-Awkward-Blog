@@ -44,5 +44,13 @@ def delete_blog(id):
 
     return redirect(url_for('main.index'))
 
+@admin.route('/delete/review/<int:id>', methods=['GET', 'POST'])
+@login_required
+def delete_review(id):
+
+    review = Review.delete_blog(id)
+
+    return redirect(url_for('.single_blog'))
+
 
     
