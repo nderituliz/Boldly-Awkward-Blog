@@ -20,3 +20,8 @@ class ReviewForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
+class EditBlog(FlaskForm):
+
+    submit = SubmitField('Edit Blog')
+
+
