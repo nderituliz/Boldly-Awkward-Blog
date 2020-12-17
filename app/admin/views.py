@@ -7,3 +7,12 @@ from . import admin
 from ..models import Blog, Review
 
 from .. import db
+
+def check_user():
+
+    if current_user.id != 1:
+
+        abort (403)
+
+    return render_template('admin/dashboard.html')
+    
